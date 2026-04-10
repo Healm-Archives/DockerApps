@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name[en_US]=Portainer
+Exec=/home/<whoami>/.local/bin/portainer-launcher.zsh
+Terminal=false
+Icon=portainer
+Type=Application
+Comment=Start Portainer-ce Container
