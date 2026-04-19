@@ -83,7 +83,7 @@ cp portainer.png ~/.local/share/icons/hicolor/512x512/apps/portainer.png
 
 Then refresh the local icon database:
 
-> gtk-update-icon-cache -f ~/.local/share/icons/hicolor/512x512/apps/
+> gtk-update-icon-cache -f ~/.local/share/icons/hicolor/
 
 ---
 

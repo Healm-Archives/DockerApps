@@ -1,7 +1,8 @@
 [Desktop Entry]
-Name[en_US]=Portainer
+Name[en_US]=Docker GUI (Portainer)
 Exec=/home/<whoami>/.local/bin/portainer-launcher.zsh
 Terminal=false
 Icon=portainer
 Type=Application
+Categories=Development;
 Comment=Start Portainer-ce Container

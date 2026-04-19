@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name[en_US]=Database UI(DBeaver)
+Exec=/home/<whoami>/.local/bin/dbeaver-launcher.zsh
+Terminal=false
+Icon=dbeaver
+Type=Application
+Categories=Development;
+Comment=Start DBeaver Container
