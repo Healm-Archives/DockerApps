@@ -1,5 +1,4 @@
 container_name="cloudbeaver"
-# container_status=""
 
 run_container() {
         docker run -d \
@@ -10,20 +9,16 @@ run_container() {
                 dbeaver/cloudbeaver:26.0.1
 }
 
-# docker ps -a --filter "name=$container_name" \
-# container_status() {
-status=$(docker ps -a --filter "name=cloudbeaver" \
+container_status=$(docker ps -a --filter "name=$container_name" \
         --format '{{.Status}}' \
         | awk '{print $1}' \
-        | grep -E 'Up|Exited')
-# }
+        | grep -q -E 'Up|Exited')
 
-if [ -z "$status" ]; then
+if [ -z "$container_status" ]; then
         echo "container doesnt exist"
         run_container
-# elif [[ $status = "Up" ]]; then
+# elif [ $container_status = "Up" ]; then
 else
-        # echo "container exist with status: $status"
         echo "container inactive" \
                 && docker start $container_name
 fi
@@ -31,18 +26,6 @@ fi
 sleep 2.5 \
 && xdg-open http://localhost:8978
 
-# docker ps -a --format '{{.Names}}' \
-#         | grep $container_name \
-#         || (echo no container exist \
-#         && run_container)
-
-# docker ps --format '{{.Names}}' \
-#         | grep "$container_name" \
-#         || (echo container inactive \
-#         && docker start $container_name \
-#         && sleep 2.5) \
-#         && xdg-open http://localhost:8978
-
-# sleep 1200 \
-# && docker stop $container_name
+sleep 1200 \
+&& docker stop $container_name
 
