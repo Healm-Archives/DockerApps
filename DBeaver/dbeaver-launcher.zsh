@@ -12,7 +12,7 @@ run_container() {
 container_status=$(docker ps -a --filter "name=$container_name" \
         --format '{{.Status}}' \
         | awk '{print $1}' \
-        | grep -q -E 'Up|Exited')
+        | grep -E 'Up|Exited')
 
 if [ -z "$container_status" ]; then
         echo "container doesnt exist"
